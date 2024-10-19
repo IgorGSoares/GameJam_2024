@@ -5,8 +5,10 @@ using UnityEngine;
 public class Golem : MonoBehaviour
 {
     public int health = 6;
-    [SerializeField] Enemy enemy;
+    [SerializeField] Enemy curEnemy;
     [SerializeField] float delay;
+
+    [SerializeField] List<Enemy> enemyList = new List<Enemy>();
 
     bool attacking = false;
 
@@ -14,15 +16,69 @@ public class Golem : MonoBehaviour
     {
         //gameObject.transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         if(health <= 0) gameObject.SetActive(false);
+
+        CheckEnemyHealth();
+
+        if(curEnemy != null && CheckDistance() <= 4)
+        {
+            attacking = true;
+            StartCoroutine(Attack());
+            return;
+        }
+
+    }
+
+    private float CheckDistance()
+    {
+        if(curEnemy == null) return -1;
+
+        var pos = transform.position - curEnemy.transform.position;
+        var distance = pos.magnitude;
+        // Debug.Log(distance);
+        return distance;
+    }
+
+    // private float CheckDistanceNewEnemy(Transform t)
+    // {
+    //     var pos = transform.position - t.transform.position;
+    //     var distance = pos.magnitude;
+    //     return distance;
+    // }
+
+    private void CheckEnemyHealth()
+    {
+        if(curEnemy == null) return;
+
+        if(curEnemy.health <= 0)
+        {
+            Debug.Log("enter low health");
+            enemyList.RemoveAt(0);
+            if(enemyList.Count == 0)
+            {
+                curEnemy = null;
+                StopCoroutine(Attack());
+            }
+            else curEnemy = enemyList[0];
+        }
     }
 
     void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Enemy")
         {
-            attacking = true;
-            enemy = other.GetComponent<Enemy>();
-            StartCoroutine(Attack());
+            var enemy = other.GetComponent<Enemy>();
+            if(curEnemy == null)
+            {
+                curEnemy = enemy;
+                enemyList.Add(curEnemy);
+            }
+            else
+            {
+                enemyList.Add(enemy);
+                // if(CheckDistance() > CheckDistanceNewEnemy(other.transform))
+                // {
+                // }
+            }
         }
     }
 
@@ -31,16 +87,16 @@ public class Golem : MonoBehaviour
         if(other.tag == "Enemy")
         {
             attacking = false;
-            enemy = null;
+            curEnemy = null;
             StopCoroutine(Attack());
         }
     }
 
     IEnumerator Attack()
     {
-        while(attacking && this.enemy.health > 0)
+        while(attacking && this.curEnemy.health > 0)
         {
-            this.enemy.health -= 3;
+            this.curEnemy.health -= 3;
 
             yield return new WaitForSeconds(delay);
         }

@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class EnemyShoot : MonoBehaviour
 {
     public int health = 6;
     [SerializeField] Transform target;
@@ -11,6 +10,8 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] float attackDelay;
     [SerializeField] float limitDistance = 2.5f;
+
+    [SerializeField] Projectile_Enemy bullet;
 
     Golem golem;
 
@@ -27,6 +28,8 @@ public class Enemy : MonoBehaviour
 
         if(golem != null && CheckDistance() <= limitDistance)
         {            
+            //Debug.Log(CheckDistance());
+
             enemyStates = EnemyStates.Attack;
             StartCoroutine(Attack());
             return;
@@ -51,7 +54,7 @@ public class Enemy : MonoBehaviour
 
         if(golem.health <= 0)
         {
-            //Debug.Log("enter low health");
+            Debug.Log("enter low health");
             golem = null;
             enemyStates = EnemyStates.Move;
             StopCoroutine(Attack());
@@ -68,24 +71,17 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    // void OnTriggerExit(Collider other)
-    // {
-    //     if (other.tag == "Golem")
-    //     {
-    //         Debug.Log("exit trigger");
-    //         golem = null;
-    //         enemyStates = EnemyStates.Move;
-    //         StopCoroutine(Attack());
-    //     }
-    // }
-
-    IEnumerator Attack()
+    IEnumerator Attack()//TODO: atirar aqui
     {
         while(enemyStates == EnemyStates.Attack && golem.health > 0)
         {
             Debug.Log("Attack");
 
-            this.golem.health -= 3;
+            var projectile = Instantiate(bullet, transform.position, transform.rotation);
+            projectile.GetComponent<Projectile_Enemy>().target = golem;
+
+            Debug.Log(projectile.GetComponent<Projectile_Enemy>().target);
+
             yield return new WaitForSeconds(attackDelay);
         }
         

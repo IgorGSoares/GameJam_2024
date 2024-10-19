@@ -15,8 +15,8 @@ TagManager:
   - UI
   - Golem
   - Enemy
-  - 
-  - 
+  - Enemy_Projectile
+  - Golem_Projectile
   - 
   - 
   - 
