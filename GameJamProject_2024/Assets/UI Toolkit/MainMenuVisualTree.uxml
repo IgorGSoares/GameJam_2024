@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=06246d1538f60c041af24567242c3af7&amp;type=3#MainMenuStyle" />
+    <ui:VisualElement name="Container" style="flex-grow: 1; flex-direction: column; background-image: url(&quot;project://database/Assets/UI%20Toolkit/IA_Background_Zigurat.jpg?fileID=2800000&amp;guid=40ad78d7b566007478e4dded6a95e503&amp;type=3#IA_Background_Zigurat&quot;); -unity-background-image-tint-color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0);">
+        <ui:Label tabindex="-1" text="THE ALCHEMIST&apos;S ZIGURAT" parse-escape-sequences="true" display-tooltip-when-elided="true" name="GameTitle" class="header" style="top: 280px; left: 50px; -unity-background-image-tint-color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0); color: rgb(255, 255, 255);" />
+        <ui:Button text="Jogar" parse-escape-sequences="true" display-tooltip-when-elided="true" enable-rich-text="false" class="button UnityButton" />
+        <ui:Button text="Créditos" parse-escape-sequences="true" display-tooltip-when-elided="true" class="button UnityButton" />
+        <ui:Button text="Sair" parse-escape-sequences="true" display-tooltip-when-elided="true" class="button UnityButton" />
+    </ui:VisualElement>
+</ui:UXML>
