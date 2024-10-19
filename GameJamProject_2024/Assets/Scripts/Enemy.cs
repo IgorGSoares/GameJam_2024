@@ -37,8 +37,13 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        if(health <= 0) gameObject.SetActive(false);
-        
+        if(health <= 0)
+        {
+            gameObject.SetActive(false);
+            GameEvents.OnEntityKilled.Invoke(drop);
+            //Object.Destroy(gameObject);
+        }
+
         CheckGolemHealth();
 
         if (enemyStates == EnemyStates.Attack) return;

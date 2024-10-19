@@ -16,6 +16,16 @@ public class CameraControler : MonoBehaviour
     private bool isMoving = false;
     private float moveSpeed = 30f;
 
+
+    [SerializeField] private float material = 50f;
+
+    private void Awake()
+    {
+        GameEvents.OnEntityKilled.AddListener((int material) =>
+        {
+            OnKilled(material);
+        });
+    }
     void Start()
     {
         Camera.main.transform.position = positions[currentIndex].position;
@@ -75,5 +85,10 @@ public class CameraControler : MonoBehaviour
         Camera.main.transform.parent = positions[currentIndex];
 
         isMoving = false;
+    }
+
+    private void OnKilled(int material)
+    {
+        this.material += material;
     }
 }

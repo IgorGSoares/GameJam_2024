@@ -10,7 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2301761905878134893, guid: 2b0cc6b2773f093458f0a77297c0d9ca, type: 3}
       propertyPath: m_Name
-      value: Enemy_Move
+      value: Enemy_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372062760515806423, guid: 2b0cc6b2773f093458f0a77297c0d9ca, type: 3}
+      propertyPath: drop
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372062760515806423, guid: 2b0cc6b2773f093458f0a77297c0d9ca, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372062760515806423, guid: 2b0cc6b2773f093458f0a77297c0d9ca, type: 3}
+      propertyPath: damage
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7958093533515221418, guid: 2b0cc6b2773f093458f0a77297c0d9ca, type: 3}
       propertyPath: m_LocalPosition.x
