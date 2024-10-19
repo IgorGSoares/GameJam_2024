@@ -13,6 +13,7 @@ public class Golem : MonoBehaviour
     void Update()
     {
         //gameObject.transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        if(health <= 0) gameObject.SetActive(false);
     }
 
     void OnTriggerEnter(Collider other)
@@ -39,7 +40,6 @@ public class Golem : MonoBehaviour
     {
         while(attacking && this.enemy.health > 0)
         {
-            Debug.Log("Attack");
             this.enemy.health -= 3;
 
             yield return new WaitForSeconds(delay);
