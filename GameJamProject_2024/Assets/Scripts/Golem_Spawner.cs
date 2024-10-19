@@ -4,21 +4,27 @@ using UnityEngine;
 
 public class Golem_Spawner : MonoBehaviour
 {
-    [SerializeField] GameObject golem;
+    private GameObject golem;
     private Color initialColor;
     private Renderer myRenderer;
 
     void Start()
     {
-        //golem = Resources.Load<GameObject>("Prefabs/Golem");
+        golem = Resources.Load<GameObject>("Prefabs/Characters/Golens/Golem");
         myRenderer = GetComponent<Renderer>();
         initialColor = myRenderer.material.color;
     }
 
     private void OnMouseDown()
     {
-        Vector3 offset = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-        Instantiate(golem, offset, Quaternion.identity);
+        if (GameController.Instance.HasEnoughGold(golem.GetComponent<Golem>().cost))
+        {
+            Vector3 offset = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+            Instantiate(golem, offset, Quaternion.identity);
+
+            GameController.Instance.SpendGold(golem.GetComponent<Golem>().cost);
+            Debug.Log(GameController.Instance.GetPlayerGold());
+        }
     }
 
     private void OnMouseOver()
