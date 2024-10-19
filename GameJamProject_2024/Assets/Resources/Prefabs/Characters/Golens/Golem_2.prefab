@@ -10,7 +10,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6518781903657469507, guid: b267e3cb1bc21794fb227107184bc84e, type: 3}
       propertyPath: m_Name
-      value: Golem
+      value: Golem_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638720017007629162, guid: b267e3cb1bc21794fb227107184bc84e, type: 3}
+      propertyPath: cost
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638720017007629162, guid: b267e3cb1bc21794fb227107184bc84e, type: 3}
+      propertyPath: drop
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638720017007629162, guid: b267e3cb1bc21794fb227107184bc84e, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638720017007629162, guid: b267e3cb1bc21794fb227107184bc84e, type: 3}
+      propertyPath: health
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7604613313052143559, guid: b267e3cb1bc21794fb227107184bc84e, type: 3}
       propertyPath: m_LocalPosition.x

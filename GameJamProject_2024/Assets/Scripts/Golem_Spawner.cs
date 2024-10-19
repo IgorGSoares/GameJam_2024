@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Golem_Spawner : MonoBehaviour
 {
-    private GameObject golem;
+    [SerializeField] GameObject golem;
     private Color initialColor;
     private Renderer myRenderer;
 
