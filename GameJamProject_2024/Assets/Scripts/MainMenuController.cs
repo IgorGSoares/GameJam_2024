@@ -32,16 +32,17 @@ public class MainMenuController : MonoBehaviour
     // Carrega a cena do jogo
     private void OnPlayButtonClicked()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
-
+    // Abre a tela de créditos
     private void OnCreditsButtonClicked()
     {
         // Abre o menu de Créditos
     }
-
+    // Sai do jogo
     private void OnQuitButtonClicked()
     {
+        Debug.Log("Sair do Jogo");
         Application.Quit();
     }
 }
