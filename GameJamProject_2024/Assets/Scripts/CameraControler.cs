@@ -22,15 +22,6 @@ public class CameraControler : MonoBehaviour
     private float moveSpeed = 30f;
 
 
-    [SerializeField] private float material = 50f;
-
-    private void Awake()
-    {
-        GameEvents.OnEntityKilled.AddListener((int material) =>
-        {
-            OnKilled(material);
-        });
-    }
     void Start()
     {
         //Time.timeScale = 0;
@@ -96,10 +87,5 @@ public class CameraControler : MonoBehaviour
         //Camera.main.transform.parent = positions[currentIndex];
 
         isMoving = false;
-    }
-
-    private void OnKilled(int material)
-    {
-        this.material += material;
     }
 }

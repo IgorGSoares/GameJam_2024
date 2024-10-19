@@ -21,6 +21,11 @@ public class GameController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        GameEvents.OnEntityKilled.AddListener((int material) =>
+        {
+            OnKilled(material);
+        });
     }
 
     #endregion
@@ -40,5 +45,10 @@ public class GameController : MonoBehaviour
     public int GetPlayerGold()
     {
         return material;
+    }
+
+    private void OnKilled(int material)
+    {
+        this.material += material;
     }
 }
