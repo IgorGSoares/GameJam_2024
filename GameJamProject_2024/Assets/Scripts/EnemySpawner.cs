@@ -30,7 +30,14 @@ public class EnemySpawner : MonoBehaviour
             var pos = Random.Range(0, 4);
             //var pos = 0;
 
-            Vector3 randomOffset = new Vector3(Random.Range(-spawnVariation, spawnVariation), 0, Random.Range(-spawnVariation, spawnVariation));
+            var chosen = spawnPoints[pos].position;
+
+            //new Vector3(Random.Range(-spawnVariation, spawnVariation), 0, Random.Range(-spawnVariation, spawnVariation));
+            Vector3 randomOffset = Vector3.zero;
+            if(chosen.x != 0) randomOffset = new Vector3(0, 0, Random.Range(-spawnVariation, spawnVariation));
+            else if(chosen.z != 0) randomOffset = new Vector3(Random.Range(-spawnVariation, spawnVariation), 0, 0);
+
+
             Vector3 spawnPosition = spawnPoints[pos].position + randomOffset;
 
             var enemy = Instantiate(enemyPrefab.gameObject, spawnPosition, spawnPoints[pos].rotation);
