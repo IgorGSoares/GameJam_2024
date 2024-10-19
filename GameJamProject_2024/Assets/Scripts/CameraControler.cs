@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-//using DG.Tweening;
+using DG.Tweening;
 
 public class CameraControler : MonoBehaviour
 {
@@ -11,16 +11,22 @@ public class CameraControler : MonoBehaviour
 
     [SerializeField] Transform[] positions;
     [SerializeField] int currentIndex = 0;
-    [SerializeField] Transform target;
+    //[SerializeField] Transform target;
+
+    [SerializeField] float duration = 2f;
+
+    [SerializeField] AnimationCurve curve;
+
 
     private bool isMoving = false;
     private float moveSpeed = 30f;
 
     void Start()
     {
-        Camera.main.transform.position = positions[currentIndex].position;
+        //Time.timeScale = 0;
+        transform.position = positions[currentIndex].position;
         //Camera.main.transform.LookAt(target);
-        Camera.main.transform.parent = positions[currentIndex];
+       // Camera.main.transform.parent = positions[currentIndex];
     }
 
     void Update()
@@ -28,7 +34,7 @@ public class CameraControler : MonoBehaviour
         //pressed = false;
 
         // Camera.main.transform.position = Vector3.zero;
-        Camera.main.transform.position = positions[currentIndex].position;
+        transform.position = positions[currentIndex].position;
 
         if (Input.GetKeyDown(KeyCode.A) && !isMoving) { direction = 1; ChangeCamera(); }
         if (Input.GetKeyDown(KeyCode.D) && !isMoving) { direction = -1; ChangeCamera();}
@@ -41,12 +47,12 @@ public class CameraControler : MonoBehaviour
         else if (currentIndex + direction < 0) currentIndex = 3;
         else currentIndex += direction;
 
-        //StartCoroutine(MoveToPosition(positions[currentIndex].position));
+        StartCoroutine(MoveToPosition(positions[currentIndex].position));
 
-        Camera.main.transform.position = positions[currentIndex].position;
-        Camera.main.transform.rotation = positions[currentIndex].rotation;
-        //Camera.main.transform.LookAt(target);
-        Camera.main.transform.parent = positions[currentIndex];
+        // Camera.main.transform.position = positions[currentIndex].position;
+        // Camera.main.transform.rotation = positions[currentIndex].rotation;
+        // //Camera.main.transform.LookAt(target);
+        // Camera.main.transform.parent = positions[currentIndex];
         
     }
 
@@ -54,25 +60,30 @@ public class CameraControler : MonoBehaviour
     {
         isMoving = true;
 
-        Vector3 startPos = Camera.main.transform.position;
+        Vector3 startPos = transform.position;
+        Vector3 startRotation = transform.eulerAngles;
 
         float progress = 0f;
-        float duration = Vector3.Distance(startPos, targetPos) / moveSpeed;
+       // float duration = Vector3.Distance(startPos, targetPos) / moveSpeed;
 
         //Camera.main.transform.DORotate(Vector3.up * direction * 90, duration);
 
         while (progress < 1f)
         {
-            progress += Time.deltaTime / duration;
+            progress += Time.unscaledDeltaTime / duration;
 
-            Camera.main.transform.position = Vector3.Lerp(startPos, targetPos, progress);
+            transform.position = Vector3.Lerp(startPos, targetPos, curve.Evaluate(progress));
+            transform.eulerAngles = Vector3.Lerp(startRotation, startRotation + new Vector3(0, direction == 1 ? 90 : -90,0), progress);
 
             //Camera.main.transform.LookAt(target);
+            //yield return new WaitForSecondsRealtime(Time.unscaledDeltaTime);
             yield return null;
         }
 
-        Camera.main.transform.position = targetPos;
-        Camera.main.transform.parent = positions[currentIndex];
+        transform.position = targetPos;
+        transform.eulerAngles = Vector3.Lerp(startRotation, startRotation + new Vector3(0,direction == 1 ? 90 : -90,0), progress);
+
+        //Camera.main.transform.parent = positions[currentIndex];
 
         isMoving = false;
     }

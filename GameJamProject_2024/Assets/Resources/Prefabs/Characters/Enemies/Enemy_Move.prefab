@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: 2848747205426721130}
   - component: {fileID: 28105371445158180}
   - component: {fileID: 6372062760515806423}
+  - component: {fileID: -5207479441435678564}
   m_Layer: 7
-  m_Name: prefab_Enemy_Move
+  m_Name: Enemy_Move
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -175,3 +176,15 @@ MonoBehaviour:
   speed: 1.5
   attackDelay: 2
   limitDistance: 2.5
+--- !u!114 &-5207479441435678564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2301761905878134893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943df47e05ea2cf4791c735829843943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
