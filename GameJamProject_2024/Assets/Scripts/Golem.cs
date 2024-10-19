@@ -51,7 +51,7 @@ public class Golem : MonoBehaviour
 
         if(curEnemy.health <= 0)
         {
-            Debug.Log("enter low health");
+            Debug.Log("Enemy killed");
             enemyList.RemoveAt(0);
             if(enemyList.Count == 0)
             {
@@ -94,8 +94,9 @@ public class Golem : MonoBehaviour
 
     IEnumerator Attack()
     {
-        while(attacking && this.curEnemy.health > 0)
+        while(attacking && (this.curEnemy != null && this.curEnemy.health > 0))
         {
+            Debug.Log("Attaking enemy");
             this.curEnemy.health -= 3;
 
             yield return new WaitForSeconds(delay);

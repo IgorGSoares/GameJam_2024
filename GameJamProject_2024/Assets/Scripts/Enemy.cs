@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
     Golem golem;
 
     EnemyStates enemyStates = EnemyStates.Move;
+
+    public void SetTarget(Transform t) => target = t;
     
 
     void Update()
@@ -31,6 +33,8 @@ public class Enemy : MonoBehaviour
             StartCoroutine(Attack());
             return;
         }
+
+        if(gameObject.transform.position == target.position) gameObject.SetActive(false);
 
         gameObject.transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     }
