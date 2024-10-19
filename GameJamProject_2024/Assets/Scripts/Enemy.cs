@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
     private bool isGettingDamage = false;
 
     //Status
-    [SerializeField] public int health = 3;
+    public int health = 3;
     [SerializeField] int damage = 1;
     [SerializeField] int drop = 5;
     [SerializeField] float speed;
