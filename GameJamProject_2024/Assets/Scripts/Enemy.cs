@@ -34,7 +34,11 @@ public class Enemy : MonoBehaviour
             return;
         }
 
-        if(gameObject.transform.position == target.position) gameObject.SetActive(false);
+        if(gameObject.transform.position == target.position)
+        {
+            gameObject.SetActive(false);
+            Debug.Log("One enemy reached the top");
+        }
 
         gameObject.transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     }
@@ -55,7 +59,7 @@ public class Enemy : MonoBehaviour
 
         if(golem.health <= 0)
         {
-            //Debug.Log("enter low health");
+            Debug.Log("golem defeated");
             golem = null;
             enemyStates = EnemyStates.Move;
             StopCoroutine(Attack());

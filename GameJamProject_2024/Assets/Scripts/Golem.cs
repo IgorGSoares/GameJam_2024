@@ -11,6 +11,7 @@ public class Golem : MonoBehaviour
     [SerializeField] List<Enemy> enemyList = new List<Enemy>();
 
     bool attacking = false;
+    bool calledCoroutine = false;
 
     void Update()
     {
@@ -22,7 +23,7 @@ public class Golem : MonoBehaviour
         if(curEnemy != null && CheckDistance() <= 4)
         {
             attacking = true;
-            StartCoroutine(Attack());
+            if(!calledCoroutine) StartCoroutine(Attack());
             return;
         }
 
@@ -53,6 +54,7 @@ public class Golem : MonoBehaviour
         {
             Debug.Log("Enemy killed");
             enemyList.RemoveAt(0);
+            calledCoroutine = false;
             if(enemyList.Count == 0)
             {
                 curEnemy = null;
@@ -89,14 +91,19 @@ public class Golem : MonoBehaviour
             attacking = false;
             curEnemy = null;
             StopCoroutine(Attack());
+            calledCoroutine = false;
         }
     }
 
     IEnumerator Attack()
     {
+        if(calledCoroutine) yield return null;
+
+        calledCoroutine = true;
+
         while(attacking && (this.curEnemy != null && this.curEnemy.health > 0))
         {
-            Debug.Log("Attaking enemy");
+            Debug.Log("Golem attaking enemy");
             this.curEnemy.health -= 3;
 
             yield return new WaitForSeconds(delay);
