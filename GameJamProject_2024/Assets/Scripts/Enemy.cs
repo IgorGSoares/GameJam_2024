@@ -8,9 +8,27 @@ public class Enemy : MonoBehaviour
     [SerializeField] Transform target;
     [SerializeField] float speed;
 
+    [SerializeField] float attackDelay;
+
+    Golem golem;
+
+    EnemyStates enemyStates = EnemyStates.Move;
+    
+
     void Update()
     {
         if(health <= 0) gameObject.SetActive(false);
+        if (enemyStates == EnemyStates.Attack) return;
+
         gameObject.transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     }
+
+    // void OnTriggerEnter(Collider other)
+    // {
+    //     if(other.tag == "Golem")
+    //     {
+    //         golem = GetComponent<Golem>();
+    //         enemyStates = EnemyStates.Attack;
+    //     }
+    // }
 }

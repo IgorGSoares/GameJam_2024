@@ -19,8 +19,9 @@ public class Golem : MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
-            StartCoroutine(Attack());
+            attacking = true;
             enemy = other.GetComponent<Enemy>();
+            StartCoroutine(Attack());
         }
     }
 
@@ -28,15 +29,20 @@ public class Golem : MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
+            attacking = false;
+            enemy = null;
             StopCoroutine(Attack());
         }
     }
 
     IEnumerator Attack()
     {
-        yield return new WaitForSeconds(delay);
+        while(attacking && this.enemy.health > 0)
+        {
+            Debug.Log("Attack");
+            this.enemy.health -= 3;
 
-        Debug.Log("Attack");
-        this.enemy.health -= 3;
+            yield return new WaitForSeconds(delay);
+        }
     }
 }
