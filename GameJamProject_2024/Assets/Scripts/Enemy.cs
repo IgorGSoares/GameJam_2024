@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int health = 6;
+    
     [SerializeField] Transform target;
-    [SerializeField] float speed;
+
 
     [SerializeField] float attackDelay;
     [SerializeField] float limitDistance = 2.5f;
@@ -16,8 +17,23 @@ public class Enemy : MonoBehaviour
 
     EnemyStates enemyStates = EnemyStates.Move;
 
-    public void SetTarget(Transform t) => target = t;
+    private Renderer myRenderer;
+    private bool isGettingDamage = false;
+
+    //Status
+    [SerializeField] int health = 3;
+    [SerializeField] int damage = 1;
+    [SerializeField] int drop = 5;
+    [SerializeField] float speed;
     
+
+    public void SetTarget(Transform t) => target = t;
+
+
+    private void Start()
+    {
+        myRenderer = GetComponent<Renderer>();
+    }
 
     void Update()
     {
@@ -41,6 +57,7 @@ public class Enemy : MonoBehaviour
         }
 
         gameObject.transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+
     }
 
     private float CheckDistance()
@@ -87,6 +104,47 @@ public class Enemy : MonoBehaviour
     //     }
     // }
 
+
+    // APENAS PARA FINS DE TESTE. REMOVER //////////////////////////////////////////////////////////////////////////
+    private void OnMouseDown()
+    {
+        OnDamageTaken(1);
+    }
+
+    public void OnDamageTaken(int damage)
+    {
+        health -= damage;
+
+        if (!isGettingDamage)
+        {
+            StartCoroutine(ChangeAlphaChannel());
+        }
+    }
+
+    IEnumerator ChangeAlphaChannel()
+    {
+        isGettingDamage = true;
+
+        float progress = 0f;
+        float duration = 0.7f;
+        float blinkSpeed = 0.2f;
+
+        UnityEngine.Color originalColor = myRenderer.material.color;
+
+        while (progress < duration)
+        {
+            progress += Time.deltaTime / duration;
+
+            float alpha = Mathf.PingPong(progress / blinkSpeed, 0.5f);
+
+            myRenderer.material.color = new UnityEngine.Color(originalColor.r, originalColor.g, originalColor.b, alpha);
+            yield return null;
+        }
+        myRenderer.material.color = originalColor;
+
+        isGettingDamage = false;
+    }
+
     IEnumerator Attack()
     {
         while(enemyStates == EnemyStates.Attack && golem.health > 0)
@@ -94,6 +152,7 @@ public class Enemy : MonoBehaviour
             Debug.Log("Attack");
 
             this.golem.health -= 3;
+            this.golem.OnDamageTaken(damage);
             yield return new WaitForSeconds(attackDelay);
         }
         

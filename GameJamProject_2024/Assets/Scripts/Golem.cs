@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Golem : MonoBehaviour
-{
-    public int health = 6;
+{  
     [SerializeField] Enemy curEnemy;
     [SerializeField] float delay;
 
@@ -12,6 +12,20 @@ public class Golem : MonoBehaviour
 
     bool attacking = false;
     bool calledCoroutine = false;
+
+    private bool isGettingDamage = false;
+    private Renderer myRenderer;
+
+    //Status
+    public int health = 5;
+    public int damage = 1;
+    public int cost = 10;
+    public int drop = 7;
+
+    private void Start()
+    {
+        myRenderer = GetComponent<Renderer>();
+    }
 
     void Update()
     {
@@ -95,6 +109,46 @@ public class Golem : MonoBehaviour
         }
     }
 
+    // APENAS PARA FINS DE TESTE. REMOVER //////////////////////////////////////////////////////////////////////////
+    private void OnMouseDown()
+    {
+        OnDamageTaken(1);
+    }
+
+    public void OnDamageTaken(int damage)
+    {
+        health -= damage;
+
+        if (!isGettingDamage)
+        {
+            StartCoroutine(ChangeAlphaChannel());
+        }
+    }
+
+    IEnumerator ChangeAlphaChannel()
+    {
+        isGettingDamage = true;
+
+        float progress = 0f;
+        float duration = 0.7f;
+        float blinkSpeed = 0.2f;
+
+        UnityEngine.Color originalColor = myRenderer.material.color;
+
+        while (progress < duration)
+        {
+            progress += Time.deltaTime / duration;
+
+            float alpha = Mathf.PingPong(progress / blinkSpeed, 0.5f);
+
+            myRenderer.material.color = new UnityEngine.Color(originalColor.r, originalColor.g, originalColor.b, alpha);
+            yield return null;
+        }
+        myRenderer.material.color = originalColor;
+
+        isGettingDamage = false;
+    }
+
     IEnumerator Attack()
     {
         if(calledCoroutine) yield return null;
@@ -104,7 +158,10 @@ public class Golem : MonoBehaviour
         while(attacking && (this.curEnemy != null && this.curEnemy.health > 0))
         {
             Debug.Log("Golem attaking enemy");
-            this.curEnemy.health -= 3;
+            //this.curEnemy.health -= 3;
+            this.curEnemy.OnDamageTaken(damage);
+
+
 
             yield return new WaitForSeconds(delay);
         }
