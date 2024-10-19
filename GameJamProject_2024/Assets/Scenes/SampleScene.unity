@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.16249314, g: 0.21881783, b: 0.2903716, a: 1}
+  m_IndirectSpecularColor: {r: 0.16255125, g: 0.21889102, b: 0.29031476, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1349,6 +1349,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8991782243580080363, guid: ded29e57105817244b502eca662c0487, type: 3}
   m_PrefabInstance: {fileID: 376413245}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &411024974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 411024976}
+  - component: {fileID: 411024975}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &411024975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411024974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe675a3058f7ee438261a69e4a62d8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &411024976
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411024974}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.6011494, y: 0.17021738, z: -3.6294017}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &428964193
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8382,3 +8426,4 @@ SceneRoots:
   - {fileID: 297962881}
   - {fileID: 1167787404}
   - {fileID: 34037311}
+  - {fileID: 411024976}
