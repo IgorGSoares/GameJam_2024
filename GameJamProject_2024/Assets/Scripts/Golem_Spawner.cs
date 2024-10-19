@@ -6,8 +6,6 @@ public class Golem_Spawner : MonoBehaviour
 {
     private GameObject golem;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         golem = Resources.Load<GameObject>("Prefabs/Golem");
