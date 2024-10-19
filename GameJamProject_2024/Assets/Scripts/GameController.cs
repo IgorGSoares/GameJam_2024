@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour
     public static GameController Instance;
 
     private int material = 100;
+    private int selectedGolem = 0;
 
     #region Singleton
 
@@ -30,6 +31,10 @@ public class GameController : MonoBehaviour
 
     #endregion
 
+    private void Update()
+    {
+        SelectGolem();    
+    }
 
     public bool HasEnoughGold(int cost)
     {
@@ -50,5 +55,22 @@ public class GameController : MonoBehaviour
     private void OnKilled(int material)
     {
         this.material += material;
+    }
+
+    public int SelectGolem()
+    {
+        if (Input.GetKey("1"))
+        {
+            selectedGolem = 0;
+        }
+        else if (Input.GetKey("2"))
+        {
+            selectedGolem = 1;
+        }
+        else if (Input.GetKey("3"))
+        {
+            selectedGolem = 2;
+        }
+        return selectedGolem;
     }
 }

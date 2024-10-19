@@ -4,25 +4,33 @@ using UnityEngine;
 
 public class Golem_Spawner : MonoBehaviour
 {
-    private GameObject golem;
+    private GameObject[] golems;
+
     private Color initialColor;
     private Renderer myRenderer;
 
     void Start()
     {
-        golem = Resources.Load<GameObject>("Prefabs/Characters/Golens/Golem");
+        golems = new GameObject[3]
+        {
+            Resources.Load<GameObject>("Prefabs/Characters/Golens/Golem_1"),
+            Resources.Load<GameObject>("Prefabs/Characters/Golens/Golem_2"),
+            Resources.Load<GameObject>("Prefabs/Characters/Golens/Golem_3"),
+        };
         myRenderer = GetComponent<Renderer>();
         initialColor = myRenderer.material.color;
     }
 
     private void OnMouseDown()
     {
-        if (GameController.Instance.HasEnoughGold(golem.GetComponent<Golem>().cost))
+        int currentGolem = GameController.Instance.SelectGolem();
+
+        if (GameController.Instance.HasEnoughGold(golems[currentGolem].GetComponent<Golem>().cost))
         {
             Vector3 offset = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-            Instantiate(golem, offset, Quaternion.identity);
+            Instantiate(golems[currentGolem], offset, Quaternion.identity);
 
-            GameController.Instance.SpendGold(golem.GetComponent<Golem>().cost);
+            GameController.Instance.SpendGold(golems[currentGolem].GetComponent<Golem>().cost);
             Debug.Log(GameController.Instance.GetPlayerGold());
         }
     }
