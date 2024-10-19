@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] Enemy enemyPrefab;
     [SerializeField] float timerToSpawn = 10f; //10f
     [SerializeField] int maxEnemies = 15;
-    private float spawnVariation = 7f;
+    private float spawnVariation = 4f;
 
     int spawnCount = 0;
     bool canSpawn = false;

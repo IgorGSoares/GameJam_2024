@@ -10,7 +10,7 @@ public class Golem_Spawner : MonoBehaviour
 
     void Start()
     {
-        golem = Resources.Load<GameObject>("Prefabs/Golem");
+        //golem = Resources.Load<GameObject>("Prefabs/Golem");
         myRenderer = GetComponent<Renderer>();
         initialColor = myRenderer.material.color;
     }

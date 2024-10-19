@@ -116,8 +116,9 @@ MonoBehaviour:
   - {fileID: 6507962603055274401}
   - {fileID: 6461607913087277932}
   target: {fileID: 0}
-  enemyPrefab: {fileID: 6372062760515806423, guid: 2b0cc6b2773f093458f0a77297c0d9ca, type: 3}
+  enemyPrefab: {fileID: 8240543192011656071, guid: 0b9518f105bb7ac4aa1ed09117151382, type: 3}
   timerToSpawn: 10
+  maxEnemies: 15
 --- !u!1 &7129080744969002208
 GameObject:
   m_ObjectHideFlags: 0
