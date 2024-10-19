@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 28105371445158180}
   - component: {fileID: 6372062760515806423}
   m_Layer: 7
-  m_Name: prefab_Enemy_Move
+  m_Name: Enemy_Move
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
