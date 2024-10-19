@@ -30,7 +30,12 @@ public class Golem : MonoBehaviour
     void Update()
     {
         //gameObject.transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-        if(health <= 0) gameObject.SetActive(false);
+        if (health <= 0)
+        {
+            gameObject.SetActive(false);
+            GameEvents.OnEntityKilled.Invoke(drop);
+            //Object.Destroy(gameObject);
+        }
 
         CheckEnemyHealth();
 
