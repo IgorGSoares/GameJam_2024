@@ -115,10 +115,10 @@ public class Golem : MonoBehaviour
     }
 
     // APENAS PARA FINS DE TESTE. REMOVER //////////////////////////////////////////////////////////////////////////
-    private void OnMouseDown()
-    {
-        OnDamageTaken(1);
-    }
+    // private void OnMouseDown()
+    // {
+    //     OnDamageTaken(1);
+    // }
 
     public void OnDamageTaken(int damage)
     {
@@ -132,6 +132,8 @@ public class Golem : MonoBehaviour
 
     IEnumerator ChangeAlphaChannel()
     {
+        Debug.Log("GOLEM GET DAMAGED");
+        
         isGettingDamage = true;
 
         float progress = 0f;
