@@ -27,6 +27,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] int damage = 1;
     [SerializeField] int drop = 5;
     [SerializeField] float speed;
+
+    public void SetInitialSpeed(float speed) => this.speed += speed;
+    public float GetSpeed() => speed;
     
 
     public void SetTarget(Transform t) => target = t;
