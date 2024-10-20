@@ -66,7 +66,7 @@ public class EnemySpawner : MonoBehaviour
 
             Vector3 spawnPosition = spawnPoints[pos].position + randomOffset;
 
-            GameObject enemy = Instantiate(enemyPrefab.gameObject, spawnPosition, spawnPoints[pos].rotation); //enemies[randomEnemy]
+            GameObject enemy = Instantiate(enemies[randomEnemy], spawnPosition, spawnPoints[pos].rotation); //enemies[randomEnemy]
 
             //enemy.GetComponent<Enemy>().SetTarget(target);
             var enemyScript = enemy.GetComponent<Enemy>();
