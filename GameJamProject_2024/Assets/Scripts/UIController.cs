@@ -11,6 +11,8 @@ public class UIController : MonoBehaviour
 
     private bool isPaused = false;
 
+    public bool canPause = true;
+
     private void Start()
     {
         UIPanel = transform.Find("Panel").gameObject;
@@ -28,7 +30,7 @@ public class UIController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && canPause)
         {
             PauseGame();
         }
@@ -54,11 +56,13 @@ public class UIController : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("SampleScene"); //SceneManager.GetActiveScene().buildIndex
     }
 
     public void GoMainMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }
 }
