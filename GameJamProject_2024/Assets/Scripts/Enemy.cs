@@ -9,7 +9,8 @@ public class Enemy : MonoBehaviour
     
     [SerializeField] Transform target;
 
-    [SerializeField] SpawnMoney spawnMoney;
+    //[SerializeField] SpawnMoney spawnMoney;
+    private GameObject moneyPrefab;
 
 
     [SerializeField] float attackDelay;
@@ -35,6 +36,7 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         myRenderer = GetComponent<Renderer>();
+        moneyPrefab = Resources.Load<GameObject>("Prefabs/Prefab_Money");
     }
 
     void Update()
@@ -42,7 +44,11 @@ public class Enemy : MonoBehaviour
         if(health <= 0)
         {
             gameObject.SetActive(false);
-            spawnMoney.InstantiateMoney();
+            //spawnMoney.InstantiateMoney(drop);
+
+            GameObject moneyInstance = Instantiate(moneyPrefab, transform.position, Quaternion.identity);
+            moneyInstance.GetComponent<Money>().amount = drop;
+
             GameEvents.OnEntityKilled.Invoke(drop);
             //Object.Destroy(gameObject);
         }
