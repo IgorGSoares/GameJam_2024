@@ -171,7 +171,7 @@ public class Enemy : MonoBehaviour
 
     IEnumerator Attack()
     {
-        animator.SetBool("isAttacking", true);
+        //animator.SetBool("isAttacking", true);
         while(enemyStates == EnemyStates.Attack && golem.health > 0)
         {
             Debug.Log("Attack");
@@ -179,7 +179,7 @@ public class Enemy : MonoBehaviour
             //this.golem.health -= 3;
             this.golem.OnDamageTaken(damage);
             if (golem.health < 0)
-            { animator.SetBool("isAttacking", false); break; }
+            //{ animator.SetBool("isAttacking", false); break; }
             yield return new WaitForSeconds(attackDelay);
         }
         
