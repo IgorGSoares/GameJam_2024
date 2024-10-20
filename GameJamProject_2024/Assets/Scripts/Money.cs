@@ -7,7 +7,9 @@ using UnityEngine.UIElements.Experimental;
 public class Money : MonoBehaviour
 {
     [SerializeField] float timer = 10f;
-    public int value = 0;
+    public int amount = 0;
+
+    //private bool isBeingCollected = false;
 
     void Start()
     {
@@ -26,9 +28,11 @@ public class Money : MonoBehaviour
 
     private void OnMouseDown()
     {
+        //isBeingCollected = true;
         Debug.Log("click money");
         StopCoroutine(Disapear());
-        GameManager.Instance.money++;
+        GameController.Instance.GainMoney(amount);
+        //GameManager.Instance.money++;
         gameObject.SetActive(false);
     }
 }
