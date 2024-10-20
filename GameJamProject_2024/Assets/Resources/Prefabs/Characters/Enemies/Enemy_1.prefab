@@ -8,6 +8,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5465596103265026373, guid: 8a2f58cecf2b8f245858a484499eff15, type: 3}
+      propertyPath: m_Color.b
+      value: 0.48150724
+      objectReference: {fileID: 0}
+    - target: {fileID: -5465596103265026373, guid: 8a2f58cecf2b8f245858a484499eff15, type: 3}
+      propertyPath: m_Color.g
+      value: 0.69803923
+      objectReference: {fileID: 0}
+    - target: {fileID: -5465596103265026373, guid: 8a2f58cecf2b8f245858a484499eff15, type: 3}
+      propertyPath: m_Color.r
+      value: 0.38039216
+      objectReference: {fileID: 0}
     - target: {fileID: 2301761905878134893, guid: 8a2f58cecf2b8f245858a484499eff15, type: 3}
       propertyPath: m_Name
       value: Enemy_1
