@@ -115,6 +115,7 @@ public class GameController : MonoBehaviour
         health--;
         mat.color = damageColor;
         mat.DOColor(originalColor, 1.25f);
-        top.transform.DOPunchRotation(Vector3.up * 360, 1.25f);
+        top.transform.DOPunchScale(Vector3.one * 1.5f, 1.25f);
+        //top.transform.DOPunchRotation(Vector3.up * 360, 1.25f);
     }
 }

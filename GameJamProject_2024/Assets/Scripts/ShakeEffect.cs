@@ -41,6 +41,11 @@ public class ShakeEffect : MonoBehaviour
         }
     }
 
+    void OnTriggerStay(Collider other)
+    {
+        if(other.tag == "Enemy") Debug.Log("enemy still in " + gameObject.name);
+    }
+
     IEnumerator ShakeObject()
     {
         if(calledCoroutine) yield return null;
