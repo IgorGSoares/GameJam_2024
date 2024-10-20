@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
   //[SerializeField] SpawnMoney spawnMoney;
     private GameObject moneyPrefab;
 
+    private Animator animator;
+
     [SerializeField] float attackDelay;
     [SerializeField] float limitDistance = 2.5f;
 
@@ -40,6 +42,7 @@ public class Enemy : MonoBehaviour
     {
         myRenderer = GetComponent<Renderer>();
         moneyPrefab = Resources.Load<GameObject>("Prefabs/Prefab_Money");
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -168,12 +171,15 @@ public class Enemy : MonoBehaviour
 
     IEnumerator Attack()
     {
+        animator.SetBool("isAttacking", true);
         while(enemyStates == EnemyStates.Attack && golem.health > 0)
         {
             Debug.Log("Attack");
 
-            this.golem.health -= 3;
+            //this.golem.health -= 3;
             this.golem.OnDamageTaken(damage);
+            if (golem.health < 0)
+            { animator.SetBool("isAttacking", false); break; }
             yield return new WaitForSeconds(attackDelay);
         }
         
