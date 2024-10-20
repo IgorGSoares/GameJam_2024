@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.16255125, g: 0.21889102, b: 0.29031476, a: 1}
+  m_IndirectSpecularColor: {r: 0.16249314, g: 0.21881783, b: 0.2903716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -732,6 +732,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8991782243580080363, guid: ded29e57105817244b502eca662c0487, type: 3}
   m_PrefabInstance: {fileID: 90875144}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &95272854 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4742659890309648360, guid: be55159c973ae3a4f91d9baa1960dccc, type: 3}
+  m_PrefabInstance: {fileID: 1958716257}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &116868697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1436,7 +1447,7 @@ MonoBehaviour:
   originalColor: {r: 0.8862745, g: 0.6666667, b: 0.22352941, a: 1}
   mat: {fileID: -6186487708732969365, guid: 0e28ba1213ac6b546875eea1caf5f496, type: 3}
   material: 50
-  moneyText: {fileID: 0}
+  moneyText: {fileID: 95272854}
 --- !u!4 &411024976
 Transform:
   m_ObjectHideFlags: 0
@@ -6689,6 +6700,30 @@ PrefabInstance:
     - target: {fileID: 1415815010727748024, guid: be55159c973ae3a4f91d9baa1960dccc, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559854258917501914, guid: be55159c973ae3a4f91d9baa1960dccc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 411024975}
+    - target: {fileID: 5559854258917501914, guid: be55159c973ae3a4f91d9baa1960dccc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectGolem
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762870991291381989, guid: be55159c973ae3a4f91d9baa1960dccc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 411024975}
+    - target: {fileID: 6762870991291381989, guid: be55159c973ae3a4f91d9baa1960dccc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectGolem
+      objectReference: {fileID: 0}
+    - target: {fileID: 6807706500732449329, guid: be55159c973ae3a4f91d9baa1960dccc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 411024975}
+    - target: {fileID: 6807706500732449329, guid: be55159c973ae3a4f91d9baa1960dccc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectGolem
       objectReference: {fileID: 0}
     - target: {fileID: 6850311097778766389, guid: be55159c973ae3a4f91d9baa1960dccc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
