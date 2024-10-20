@@ -115,10 +115,10 @@ public class Enemy : MonoBehaviour
 
 
     // APENAS PARA FINS DE TESTE. REMOVER //////////////////////////////////////////////////////////////////////////
-    private void OnMouseDown()
-    {
-        OnDamageTaken(1);
-    }
+    // private void OnMouseDown()
+    // {
+    //     OnDamageTaken(1);
+    // }
 
     public void OnDamageTaken(int damage)
     {
