@@ -51,7 +51,7 @@ public class ShakeEffect : MonoBehaviour
         while(dowhile)
         {
             // mySequence.Append(transform.DOShakeScale(1.25f, 1.25f));
-            transform.DOShakeScale(1f, 0.5f); //COMMENT: ou (1.25f, 0.75f)
+            transform.DOShakeScale(1.25f, 0.75f); //COMMENT: ou (1.25f, 0.75f)
 
             yield return new WaitForSeconds(0.3f);
         }
