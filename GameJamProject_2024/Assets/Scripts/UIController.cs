@@ -13,6 +13,9 @@ public class UIController : MonoBehaviour
 
     public bool canPause = true;
 
+    [SerializeField] Image[] healthPoints;
+    [SerializeField] GameObject gameOverPanel;
+
     private void Start()
     {
         UIPanel = transform.Find("Panel").gameObject;
@@ -54,6 +57,11 @@ public class UIController : MonoBehaviour
         }
     }
 
+    public void TakeDamage(int count)
+    {
+        healthPoints[count].gameObject.SetActive(false);
+    }
+
     public void RestartGame()
     {
         Time.timeScale = 1f;
@@ -64,5 +72,10 @@ public class UIController : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
+    }
+
+    public void ShowGameOver()
+    {
+        gameOverPanel.SetActive(true);
     }
 }

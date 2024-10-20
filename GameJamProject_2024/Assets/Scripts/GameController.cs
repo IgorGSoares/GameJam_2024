@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour
 {
     public static GameController Instance;
 
+    [SerializeField] UIController uiController;
+
     [Header("Health")]
     [SerializeField] int health = 4;
     [SerializeField] GameObject top;
@@ -55,7 +57,11 @@ public class GameController : MonoBehaviour
     private void Update()
     {
         //SelectGolem();
-        if(health <= 0) Time.timeScale = 0; 
+        if(health <= 0)
+        {
+            Time.timeScale = 0; 
+            uiController.ShowGameOver();
+        }
     }
 
     public bool HasEnoughGold(int cost)
@@ -112,9 +118,11 @@ public class GameController : MonoBehaviour
 
     public int GetSelectedGolem() => selectedGolem;
 
+    [ContextMenu("TakeDamage")]
     public void EnemyReachTop()
     {
         health--;
+        uiController.TakeDamage(health);
         mat.color = damageColor;
         mat.DOColor(originalColor, 1.25f);
         top.transform.DOPunchScale(Vector3.one * 1.5f, 1.25f);
