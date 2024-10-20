@@ -123,3 +123,4 @@ MonoBehaviour:
   target: {fileID: 0}
   limitDistance: 1
   speed: 2
+  lifetime: 0

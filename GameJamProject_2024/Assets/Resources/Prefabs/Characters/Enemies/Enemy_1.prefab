@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 28105371445158180, guid: 2b0cc6b2773f093458f0a77297c0d9ca, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2301761905878134893, guid: 2b0cc6b2773f093458f0a77297c0d9ca, type: 3}
       propertyPath: m_Name
       value: Enemy_1
@@ -76,6 +80,7 @@ PrefabInstance:
       addedObject: {fileID: 1243996151591779296}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b0cc6b2773f093458f0a77297c0d9ca, type: 3}
+<<<<<<< Updated upstream
 --- !u!4 &4918639880136189690 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7958093533515221418, guid: 2b0cc6b2773f093458f0a77297c0d9ca, type: 3}
@@ -172,3 +177,5 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 9118690293606325790, guid: f3e5274ea0aee7043af0a5227d9a7cf9, type: 3}
   m_PrefabInstance: {fileID: 8056824744116332031}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> Stashed changes

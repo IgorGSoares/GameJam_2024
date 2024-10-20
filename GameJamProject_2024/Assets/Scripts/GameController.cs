@@ -66,14 +66,16 @@ public class GameController : MonoBehaviour
     public void SpendGold(int amount)
     {
         material -= amount;
-        moneyText.text = "Material = " + material.ToString();
+        //moneyText.text = "Material = " + material.ToString();
+        moneyText.text = material.ToString();
         Debug.Log("Gold restante: " + material);
     }
 
     public void GainMoney(int amount)
     {
         material += amount;
-        moneyText.text = "Material = " + material.ToString();
+        //moneyText.text = "Material = " + material.ToString();
+        moneyText.text = material.ToString();
     }
 
     public int GetPlayerGold()
