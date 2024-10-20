@@ -21,13 +21,13 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6372062760515806423, guid: 2b0cc6b2773f093458f0a77297c0d9ca, type: 3}
-      propertyPath: spawnMoney
-      value: 
-      objectReference: {fileID: 2128238927336163276}
-    - target: {fileID: 6372062760515806423, guid: 2b0cc6b2773f093458f0a77297c0d9ca, type: 3}
       propertyPath: attackDelay
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6372062760515806423, guid: 2b0cc6b2773f093458f0a77297c0d9ca, type: 3}
+      propertyPath: deathParticle
+      value: 
+      objectReference: {fileID: 1243996151591779297}
     - target: {fileID: 7958093533515221418, guid: 2b0cc6b2773f093458f0a77297c0d9ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -70,17 +70,97 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7958093533515221418, guid: 2b0cc6b2773f093458f0a77297c0d9ca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1243996151591779296}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b0cc6b2773f093458f0a77297c0d9ca, type: 3}
---- !u!114 &2128238927336163276 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -5207479441435678564, guid: 2b0cc6b2773f093458f0a77297c0d9ca, type: 3}
+--- !u!4 &4918639880136189690 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7958093533515221418, guid: 2b0cc6b2773f093458f0a77297c0d9ca, type: 3}
   m_PrefabInstance: {fileID: 3040588418671472464}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 943df47e05ea2cf4791c735829843943, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+--- !u!1001 &8056824744116332031
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4918639880136189690}
+    m_Modifications:
+    - target: {fileID: 9118690293606325784, guid: f3e5274ea0aee7043af0a5227d9a7cf9, type: 3}
+      propertyPath: m_Name
+      value: CFXR Water Splash (Smaller) Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118690293606325791, guid: f3e5274ea0aee7043af0a5227d9a7cf9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118690293606325791, guid: f3e5274ea0aee7043af0a5227d9a7cf9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118690293606325791, guid: f3e5274ea0aee7043af0a5227d9a7cf9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118690293606325791, guid: f3e5274ea0aee7043af0a5227d9a7cf9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118690293606325791, guid: f3e5274ea0aee7043af0a5227d9a7cf9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118690293606325791, guid: f3e5274ea0aee7043af0a5227d9a7cf9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118690293606325791, guid: f3e5274ea0aee7043af0a5227d9a7cf9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118690293606325791, guid: f3e5274ea0aee7043af0a5227d9a7cf9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118690293606325791, guid: f3e5274ea0aee7043af0a5227d9a7cf9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118690293606325791, guid: f3e5274ea0aee7043af0a5227d9a7cf9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118690293606325791, guid: f3e5274ea0aee7043af0a5227d9a7cf9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118690293606325791, guid: f3e5274ea0aee7043af0a5227d9a7cf9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118690293606325791, guid: f3e5274ea0aee7043af0a5227d9a7cf9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118690293606325791, guid: f3e5274ea0aee7043af0a5227d9a7cf9, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f3e5274ea0aee7043af0a5227d9a7cf9, type: 3}
+--- !u!4 &1243996151591779296 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9118690293606325791, guid: f3e5274ea0aee7043af0a5227d9a7cf9, type: 3}
+  m_PrefabInstance: {fileID: 8056824744116332031}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1243996151591779297 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 9118690293606325790, guid: f3e5274ea0aee7043af0a5227d9a7cf9, type: 3}
+  m_PrefabInstance: {fileID: 8056824744116332031}
+  m_PrefabAsset: {fileID: 0}
