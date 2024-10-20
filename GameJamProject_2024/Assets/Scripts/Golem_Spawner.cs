@@ -25,6 +25,8 @@ public class Golem_Spawner : MonoBehaviour
     {
         int currentGolem = GameController.Instance.GetSelectedGolem();
 
+        if(currentGolem == -1) return;
+
         if (GameController.Instance.HasEnoughGold(golems[currentGolem].GetComponent<Golem>().cost))
         {
             Vector3 offset = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);

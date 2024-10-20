@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
     public static GameController Instance;
 
-    private int material = 100;
-    private int selectedGolem = 0;
+    [SerializeField] int material = 50;
+    [SerializeField] TextMeshProUGUI moneyText;
+    private int selectedGolem = -1;
 
     #region Singleton
 
@@ -44,7 +46,14 @@ public class GameController : MonoBehaviour
     public void SpendGold(int amount)
     {
         material -= amount;
+        moneyText.text = "Material = " + material.ToString();
         Debug.Log("Gold restante: " + material);
+    }
+
+    public void GainMoney(int amount)
+    {
+        material += amount;
+        moneyText.text = "Material = " + material.ToString();
     }
 
     public int GetPlayerGold()
