@@ -44,12 +44,12 @@ public class EnemySpawner : MonoBehaviour
             {
                 chosen = spawnPoints[pos].position;
             }
-            else if (spawnCount > 3 && spawnCount <= 6)
-            {
-                pos = Random.Range(0, 2);
-                chosen = spawnPoints[pos].position;
-            }
-            else if (spawnCount > 6 && spawnCount <= 10){
+            // else if (spawnCount > 3 && spawnCount <= 6)
+            // {
+            //     pos = Random.Range(0, 2);
+            //     chosen = spawnPoints[pos].position;
+            // }
+            else if (spawnCount > 3 && spawnCount <= 10){
                 pos = Random.Range(0, 4);
                 chosen = spawnPoints[pos].position;
                 randomEnemy = Random.Range(0, 2);
