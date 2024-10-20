@@ -48,7 +48,8 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        moneyText.text = "Material = " + material.ToString();
+        //moneyText.text = "Material = " + material.ToString();
+        moneyText.text = material.ToString();
     }
 
     private void Update()
