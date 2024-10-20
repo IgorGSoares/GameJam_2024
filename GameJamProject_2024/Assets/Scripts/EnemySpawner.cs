@@ -7,6 +7,9 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] Transform[] spawnPoints;
     [SerializeField] Transform target;
     [SerializeField] Enemy enemyPrefab;
+
+    private GameObject[] enemies;
+
     [SerializeField] float timerToSpawn = 10f; //10f
     [SerializeField] int maxEnemies = 15;
     private float spawnVariation = 4f;
@@ -16,6 +19,12 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
+        enemies = new GameObject[3]
+        {
+            Resources.Load<GameObject>("Prefabs/Characters/Enemies/Enemy_1"),
+            Resources.Load<GameObject>("Prefabs/Characters/Enemies/Enemy_2"),
+            Resources.Load<GameObject>("Prefabs/Characters/Enemies/Enemy_3"),
+        };
         StartCoroutine(SpawnEnemies());
         StartCoroutine(ReduceDelay());
     }
@@ -37,10 +46,13 @@ public class EnemySpawner : MonoBehaviour
             if(chosen.x != 0) randomOffset = new Vector3(0, 0, Random.Range(-spawnVariation, spawnVariation));
             else if(chosen.z != 0) randomOffset = new Vector3(Random.Range(-spawnVariation, spawnVariation), 0, 0);
 
-
             Vector3 spawnPosition = spawnPoints[pos].position + randomOffset;
 
-            var enemy = Instantiate(enemyPrefab.gameObject, spawnPosition, spawnPoints[pos].rotation);
+            //var enemy = Instantiate(enemyPrefab.gameObject, spawnPosition, spawnPoints[pos].rotation);
+
+            int randomEnemy = Random.Range(0, 3);
+            GameObject enemy = Instantiate(enemies[randomEnemy], spawnPosition, spawnPoints[pos].rotation);
+
             enemy.GetComponent<Enemy>().SetTarget(target);
 
             spawnCount++;        
