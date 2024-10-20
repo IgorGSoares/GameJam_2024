@@ -3329,6 +3329,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 58057177}
+    - target: {fileID: 1259177433499445611, guid: 621b3a96e6034df46bcf1d74a60c76fa, type: 3}
+      propertyPath: enemyPrefab
+      value: 
+      objectReference: {fileID: 6372062760515806423, guid: 8a2f58cecf2b8f245858a484499eff15, type: 3}
     - target: {fileID: 2000919981679181531, guid: 621b3a96e6034df46bcf1d74a60c76fa, type: 3}
       propertyPath: m_Icon
       value: 
