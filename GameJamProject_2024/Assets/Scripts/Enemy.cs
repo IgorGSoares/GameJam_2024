@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
     
     [SerializeField] Transform target;
 
+    [SerializeField] SpawnMoney spawnMoney;
+
 
     [SerializeField] float attackDelay;
     [SerializeField] float limitDistance = 2.5f;
@@ -40,6 +42,7 @@ public class Enemy : MonoBehaviour
         if(health <= 0)
         {
             gameObject.SetActive(false);
+            spawnMoney.InstantiateMoney();
             GameEvents.OnEntityKilled.Invoke(drop);
             //Object.Destroy(gameObject);
         }

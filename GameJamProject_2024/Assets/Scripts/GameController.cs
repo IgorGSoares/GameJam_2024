@@ -46,6 +46,11 @@ public class GameController : MonoBehaviour
 
     #endregion
 
+    void Start()
+    {
+        moneyText.text = "Material = " + material.ToString();
+    }
+
     private void Update()
     {
         //SelectGolem();

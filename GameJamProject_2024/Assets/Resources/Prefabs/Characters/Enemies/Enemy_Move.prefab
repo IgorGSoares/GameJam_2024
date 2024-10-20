@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  spawnMoney: {fileID: 0}
   attackDelay: 1.5
   limitDistance: 3.5
   health: 9
@@ -190,5 +191,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 943df47e05ea2cf4791c735829843943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 0
-  prefab: {fileID: 0}
+  value: 5
+  prefab: {fileID: 2382499113795767857, guid: e8557ee1395c15e47a15c90ffc9f5447, type: 3}

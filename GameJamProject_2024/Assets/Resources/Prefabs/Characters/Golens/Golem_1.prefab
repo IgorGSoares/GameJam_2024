@@ -13,6 +13,10 @@ PrefabInstance:
       value: Golem_1
       objectReference: {fileID: 0}
     - target: {fileID: 6638720017007629162, guid: b267e3cb1bc21794fb227107184bc84e, type: 3}
+      propertyPath: delay
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638720017007629162, guid: b267e3cb1bc21794fb227107184bc84e, type: 3}
       propertyPath: health
       value: 5
       objectReference: {fileID: 0}

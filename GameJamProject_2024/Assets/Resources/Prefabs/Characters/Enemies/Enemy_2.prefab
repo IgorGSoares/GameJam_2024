@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5207479441435678564, guid: 2b0cc6b2773f093458f0a77297c0d9ca, type: 3}
+      propertyPath: value
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2301761905878134893, guid: 2b0cc6b2773f093458f0a77297c0d9ca, type: 3}
       propertyPath: m_Name
       value: Enemy_2
@@ -24,6 +28,10 @@ PrefabInstance:
       propertyPath: health
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6372062760515806423, guid: 2b0cc6b2773f093458f0a77297c0d9ca, type: 3}
+      propertyPath: spawnMoney
+      value: 
+      objectReference: {fileID: 2128238927336163276}
     - target: {fileID: 7472741218946979982, guid: 2b0cc6b2773f093458f0a77297c0d9ca, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -73,3 +81,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b0cc6b2773f093458f0a77297c0d9ca, type: 3}
+--- !u!114 &2128238927336163276 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -5207479441435678564, guid: 2b0cc6b2773f093458f0a77297c0d9ca, type: 3}
+  m_PrefabInstance: {fileID: 3040588418671472464}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943df47e05ea2cf4791c735829843943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
