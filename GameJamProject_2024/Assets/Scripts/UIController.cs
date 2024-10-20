@@ -59,6 +59,6 @@ public class UIController : MonoBehaviour
 
     public void GoMainMenu()
     {
-        //SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Menu");
     }
 }

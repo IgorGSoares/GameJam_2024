@@ -8,12 +8,13 @@ public class Enemy : MonoBehaviour
 {
     
     [SerializeField] Transform target;
-
-    [SerializeField] SpawnMoney spawnMoney;
-
+  //[SerializeField] SpawnMoney spawnMoney;
+    private GameObject moneyPrefab;
 
     [SerializeField] float attackDelay;
     [SerializeField] float limitDistance = 2.5f;
+
+    [SerializeField] ParticleSystem deathParticle;
 
     Golem golem;
 
@@ -23,26 +24,37 @@ public class Enemy : MonoBehaviour
     private bool isGettingDamage = false;
 
     //Status
+    [Header("STATS")]
     public int health = 3;
     [SerializeField] int damage = 1;
     [SerializeField] int drop = 5;
     [SerializeField] float speed;
-    
 
+    public void SetInitialSpeed(float speed) => this.speed += speed;
+    public float GetSpeed() => speed;
+    
     public void SetTarget(Transform t) => target = t;
 
 
     private void Start()
     {
         myRenderer = GetComponent<Renderer>();
+        moneyPrefab = Resources.Load<GameObject>("Prefabs/Prefab_Money");
     }
 
     void Update()
     {
         if(health <= 0)
         {
+            deathParticle.transform.parent = null;
+            deathParticle.gameObject.SetActive(true);
+            
             gameObject.SetActive(false);
-            spawnMoney.InstantiateMoney();
+            //spawnMoney.InstantiateMoney(drop);
+
+            GameObject moneyInstance = Instantiate(moneyPrefab, transform.position, Quaternion.identity);
+            moneyInstance.GetComponent<Money>().amount = drop;
+
             GameEvents.OnEntityKilled.Invoke(drop);
             //Object.Destroy(gameObject);
         }

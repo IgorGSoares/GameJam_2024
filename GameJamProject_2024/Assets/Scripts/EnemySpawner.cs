@@ -68,7 +68,11 @@ public class EnemySpawner : MonoBehaviour
 
             GameObject enemy = Instantiate(enemies[randomEnemy], spawnPosition, spawnPoints[pos].rotation);
 
-            enemy.GetComponent<Enemy>().SetTarget(target);
+            //enemy.GetComponent<Enemy>().SetTarget(target);
+            var enemyScript = enemy.GetComponent<Enemy>();
+            enemyScript.SetTarget(target);
+
+            if(spawnCount <= 3) enemyScript.SetInitialSpeed(0.75f); //enemyScript.GetSpeed() + 
 
             spawnCount++;        
             yield return new WaitForSeconds(timerToSpawn);

@@ -37,7 +37,7 @@ public class MainMenuController : MonoBehaviour
     // Carrega a cena do jogo
     private void OnPlayButtonClicked()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("SampleScene");
     }
     // Abre a tela de créditos
     private void OnCreditsButtonClicked()
