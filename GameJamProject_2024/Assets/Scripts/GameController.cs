@@ -31,10 +31,10 @@ public class GameController : MonoBehaviour
 
     #endregion
 
-    private void Update()
-    {
-        SelectGolem();    
-    }
+    // private void Update()
+    // {
+    //     SelectGolem();    
+    // }
 
     public bool HasEnoughGold(int cost)
     {
@@ -57,20 +57,27 @@ public class GameController : MonoBehaviour
         this.material += material;
     }
 
-    public int SelectGolem()
+    // public int SelectGolem()
+    // {
+    //     if (Input.GetKey("1"))
+    //     {
+    //         selectedGolem = 0;
+    //     }
+    //     else if (Input.GetKey("2"))
+    //     {
+    //         selectedGolem = 1;
+    //     }
+    //     else if (Input.GetKey("3"))
+    //     {
+    //         selectedGolem = 2;
+    //     }
+    //     return selectedGolem;
+    // }
+
+    public void SelectGolem(int golem)
     {
-        if (Input.GetKey("1"))
-        {
-            selectedGolem = 0;
-        }
-        else if (Input.GetKey("2"))
-        {
-            selectedGolem = 1;
-        }
-        else if (Input.GetKey("3"))
-        {
-            selectedGolem = 2;
-        }
-        return selectedGolem;
+        selectedGolem = golem;
     }
+
+    public int GetSelectedGolem() => selectedGolem;
 }

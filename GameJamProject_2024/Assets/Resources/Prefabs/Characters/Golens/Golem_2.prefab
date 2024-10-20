@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 2334061559161176195, guid: b267e3cb1bc21794fb227107184bc84e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4fea4a73d7bf07746b1e3228546eeae9, type: 2}
+      objectReference: {fileID: 2100000, guid: 6029500f4e66db74da84168d8d39d6c5, type: 2}
     - target: {fileID: 6518781903657469507, guid: b267e3cb1bc21794fb227107184bc84e, type: 3}
       propertyPath: m_Name
       value: Golem_2

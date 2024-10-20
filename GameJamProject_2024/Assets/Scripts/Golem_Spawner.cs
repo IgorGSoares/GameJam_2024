@@ -23,7 +23,7 @@ public class Golem_Spawner : MonoBehaviour
 
     private void OnMouseDown()
     {
-        int currentGolem = GameController.Instance.SelectGolem();
+        int currentGolem = GameController.Instance.GetSelectedGolem();
 
         if (GameController.Instance.HasEnoughGold(golems[currentGolem].GetComponent<Golem>().cost))
         {
