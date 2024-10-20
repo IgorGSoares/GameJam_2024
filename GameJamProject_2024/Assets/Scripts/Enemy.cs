@@ -58,7 +58,8 @@ public class Enemy : MonoBehaviour
         if(gameObject.transform.position == target.position)
         {
             gameObject.SetActive(false);
-            Debug.Log("One enemy reached the top");
+            //Debug.Log("One enemy reached the top");
+            GameController.Instance.EnemyReachTop();
         }
 
         gameObject.transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);

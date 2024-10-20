@@ -3,10 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+using DG.Tweening;
+
 public class GameController : MonoBehaviour
 {
     public static GameController Instance;
 
+    [Header("Health")]
+    [SerializeField] int health = 4;
+    [SerializeField] GameObject top;
+    [SerializeField] Color damageColor;
+    [SerializeField] Color originalColor;
+    [SerializeField] Material mat;
+
+
+    [Space]
     [SerializeField] int material = 50;
     [SerializeField] TextMeshProUGUI moneyText;
     private int selectedGolem = -1;
@@ -25,6 +36,8 @@ public class GameController : MonoBehaviour
             Destroy(gameObject);
         }
 
+        mat.color = originalColor;
+
         GameEvents.OnEntityKilled.AddListener((int material) =>
         {
             OnKilled(material);
@@ -33,10 +46,11 @@ public class GameController : MonoBehaviour
 
     #endregion
 
-    // private void Update()
-    // {
-    //     SelectGolem();    
-    // }
+    private void Update()
+    {
+        //SelectGolem();
+        if(health <= 0) Time.timeScale = 0; 
+    }
 
     public bool HasEnoughGold(int cost)
     {
@@ -89,4 +103,12 @@ public class GameController : MonoBehaviour
     }
 
     public int GetSelectedGolem() => selectedGolem;
+
+    public void EnemyReachTop()
+    {
+        health--;
+        mat.color = damageColor;
+        mat.DOColor(originalColor, 1.25f);
+        top.transform.DOPunchRotation(Vector3.up * 360, 1.25f);
+    }
 }
