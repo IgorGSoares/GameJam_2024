@@ -8,10 +8,8 @@ public class Enemy : MonoBehaviour
 {
     
     [SerializeField] Transform target;
-
-    //[SerializeField] SpawnMoney spawnMoney;
+  //[SerializeField] SpawnMoney spawnMoney;
     private GameObject moneyPrefab;
-
 
     [SerializeField] float attackDelay;
     [SerializeField] float limitDistance = 2.5f;
@@ -29,7 +27,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] int drop = 5;
     [SerializeField] float speed;
     
-
     public void SetTarget(Transform t) => target = t;
 
 
