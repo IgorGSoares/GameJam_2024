@@ -2,6 +2,7 @@
     font-size: 24px;
     -unity-font-style: bold;
     -unity-font: url('project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&guid=40f4c6ea03365d3438f240143e030aa9&type=3#NotInter-Regular');
+    -unity-text-align: upper-left;
 }
 
 .button {
@@ -37,4 +38,7 @@
     transition-property: scale;
     transition-duration: 0.15s;
     transition-timing-function: ease-in-out;
+}
+
+.menu:active {
 }
