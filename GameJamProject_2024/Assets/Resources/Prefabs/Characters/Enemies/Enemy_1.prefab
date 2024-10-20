@@ -93,6 +93,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CFXR Water Splash (Smaller) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 9118690293606325784, guid: f3e5274ea0aee7043af0a5227d9a7cf9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118690293606325790, guid: f3e5274ea0aee7043af0a5227d9a7cf9, type: 3}
+      propertyPath: stopAction
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9118690293606325791, guid: f3e5274ea0aee7043af0a5227d9a7cf9, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.25
