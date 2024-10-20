@@ -120,6 +120,8 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
 
+        Debug.Log("DAMAGE TAKEN");
+
         if (!isGettingDamage)
         {
             StartCoroutine(ChangeAlphaChannel());
