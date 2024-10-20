@@ -14,6 +14,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] float attackDelay;
     [SerializeField] float limitDistance = 2.5f;
 
+    [SerializeField] ParticleSystem deathParticle;
+
     Golem golem;
 
     EnemyStates enemyStates = EnemyStates.Move;
@@ -22,6 +24,7 @@ public class Enemy : MonoBehaviour
     private bool isGettingDamage = false;
 
     //Status
+    [Header("STATS")]
     public int health = 3;
     [SerializeField] int damage = 1;
     [SerializeField] int drop = 5;
@@ -43,6 +46,9 @@ public class Enemy : MonoBehaviour
     {
         if(health <= 0)
         {
+            deathParticle.transform.parent = null;
+            deathParticle.gameObject.SetActive(true);
+            
             gameObject.SetActive(false);
             //spawnMoney.InstantiateMoney(drop);
 
