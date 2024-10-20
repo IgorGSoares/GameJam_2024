@@ -7870,12 +7870,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+<<<<<<< Updated upstream
 --- !u!1001 &1888548902
+=======
+--- !u!1001 &4565907109979089163
+>>>>>>> Stashed changes
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
+<<<<<<< Updated upstream
     m_TransformParent: {fileID: 85561646}
     m_Modifications:
     - target: {fileID: 8530811439906849515, guid: ded29e57105817244b502eca662c0487, type: 3}
@@ -7926,10 +7931,63 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+=======
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 412697302676893711, guid: a6fa0e35f110058498b5f80f3060eedb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.2538414
+      objectReference: {fileID: 0}
+    - target: {fileID: 412697302676893711, guid: a6fa0e35f110058498b5f80f3060eedb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 412697302676893711, guid: a6fa0e35f110058498b5f80f3060eedb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 412697302676893711, guid: a6fa0e35f110058498b5f80f3060eedb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 412697302676893711, guid: a6fa0e35f110058498b5f80f3060eedb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 412697302676893711, guid: a6fa0e35f110058498b5f80f3060eedb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 412697302676893711, guid: a6fa0e35f110058498b5f80f3060eedb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 412697302676893711, guid: a6fa0e35f110058498b5f80f3060eedb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 412697302676893711, guid: a6fa0e35f110058498b5f80f3060eedb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 412697302676893711, guid: a6fa0e35f110058498b5f80f3060eedb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7314798357674742671, guid: a6fa0e35f110058498b5f80f3060eedb, type: 3}
+      propertyPath: m_Name
+      value: Enemy_Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 7314798357674742671, guid: a6fa0e35f110058498b5f80f3060eedb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+>>>>>>> Stashed changes
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
+<<<<<<< Updated upstream
   m_SourcePrefab: {fileID: 100100000, guid: ded29e57105817244b502eca662c0487, type: 3}
 --- !u!4 &1888548903 stripped
 Transform:
@@ -9640,6 +9698,9 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+=======
+  m_SourcePrefab: {fileID: 100100000, guid: a6fa0e35f110058498b5f80f3060eedb, type: 3}
+>>>>>>> Stashed changes
 --- !u!1001 &5190581111508463426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9701,6 +9762,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ded29e57105817244b502eca662c0487, type: 3}
+<<<<<<< Updated upstream
 --- !u!23 &5320094228961270738
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10213,6 +10275,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8259430896816248207}
   m_Mesh: {fileID: -8413837161920484157, guid: 5e57c9bc8354e874e9a0e6bc56e55cb3, type: 3}
+=======
+>>>>>>> Stashed changes
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -10222,6 +10286,7 @@ SceneRoots:
   - {fileID: 411024976}
   - {fileID: 1448253667}
   - {fileID: 58057177}
+<<<<<<< Updated upstream
   - {fileID: 4081889889575411427}
   - {fileID: 34037311}
   - {fileID: 297962881}
@@ -10230,3 +10295,10 @@ SceneRoots:
   - {fileID: 730328244}
   - {fileID: 58196027}
   - {fileID: 543663467}
+=======
+  - {fileID: 4565907109979089163}
+  - {fileID: 5190581111508463426}
+  - {fileID: 1165436579}
+  - {fileID: 1749902081}
+  - {fileID: 37923842}
+>>>>>>> Stashed changes
