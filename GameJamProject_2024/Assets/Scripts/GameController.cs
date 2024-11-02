@@ -25,14 +25,14 @@ public class GameController : MonoBehaviour
     private int selectedGolem = -1;
 
     #region Singleton
-
     void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
         }
-  
+
+        if(Time.timeScale == 0) Time.timeScale = 1;
 
         mat.color = originalColor;
 
@@ -41,7 +41,6 @@ public class GameController : MonoBehaviour
             OnKilled(material);
         });
     }
-
     #endregion
 
     void Start()

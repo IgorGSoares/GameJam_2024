@@ -23,7 +23,7 @@ public class ShakeEffect : MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
-            Debug.Log("enemy enter");
+            //Debug.Log("enemy enter");
             StartCoroutine(ShakeObject());
         }
     }
@@ -41,10 +41,10 @@ public class ShakeEffect : MonoBehaviour
         }
     }
 
-    void OnTriggerStay(Collider other)
-    {
-        if(other.tag == "Enemy") Debug.Log("enemy still in " + gameObject.name);
-    }
+    // void OnTriggerStay(Collider other)
+    // {
+    //     if(other.tag == "Enemy") Debug.Log("enemy still in " + gameObject.name);
+    // }
 
     IEnumerator ShakeObject()
     {

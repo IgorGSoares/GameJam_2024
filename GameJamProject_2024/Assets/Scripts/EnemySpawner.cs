@@ -6,9 +6,8 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] Transform[] spawnPoints;
     [SerializeField] Transform target;
-    [SerializeField] Enemy enemyPrefab;
 
-    private GameObject[] enemies;
+    [SerializeField] GameObject[] enemies;
 
     [SerializeField] float timerToSpawn = 10f; //10f
     [SerializeField] int maxEnemies = 15;
@@ -31,11 +30,16 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator SpawnEnemies()
     {
+        //Debug.Log("call enemy spawner");
         yield return new WaitForSeconds(0.5f); //7.5
         canSpawn = true;
 
+        //Debug.Log("spawncount: " + spawnCount);
+
         while(canSpawn && spawnCount < maxEnemies)
         {
+            Debug.Log("enter in while");
+
             var pos = 0;
             var chosen = spawnPoints[pos].position;
             int randomEnemy = 0;
@@ -77,6 +81,9 @@ public class EnemySpawner : MonoBehaviour
             spawnCount++;        
             yield return new WaitForSeconds(timerToSpawn);
         }
+
+        //Debug.Log("out of while");
+
         canSpawn = false;
     }
 

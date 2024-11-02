@@ -21,14 +21,14 @@ public class UIController : MonoBehaviour
         UIPanel = transform.Find("Panel").gameObject;
         pauseMenu = transform.Find("PauseMenu").gameObject;
 
-        if (UIPanel != null)
-        {
-            Debug.Log("UIPanel encontrado");
-        }
-        if (pauseMenu != null)
-        {
-            Debug.Log("menuPanel encontrado");
-        }
+        // if (UIPanel != null)
+        // {
+        //     Debug.Log("UIPanel encontrado");
+        // }
+        // if (pauseMenu != null)
+        // {
+        //     Debug.Log("menuPanel encontrado");
+        // }
     }
 
     void Update()
