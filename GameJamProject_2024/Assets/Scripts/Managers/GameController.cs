@@ -13,10 +13,11 @@ public class GameController : MonoBehaviour
 
     [Header("Health")]
     [SerializeField] int health = 4;
-    [SerializeField] GameObject top;
+    //[SerializeField] GameObject top;
     [SerializeField] Color damageColor;
     [SerializeField] Color originalColor;
     [SerializeField] Material mat;
+    [SerializeField] GameObject[] healthObject;
 
 
     [Space]
@@ -89,23 +90,6 @@ public class GameController : MonoBehaviour
         this.material += material;
     }
 
-    // public int SelectGolem()
-    // {
-    //     if (Input.GetKey("1"))
-    //     {
-    //         selectedGolem = 0;
-    //     }
-    //     else if (Input.GetKey("2"))
-    //     {
-    //         selectedGolem = 1;
-    //     }
-    //     else if (Input.GetKey("3"))
-    //     {
-    //         selectedGolem = 2;
-    //     }
-    //     return selectedGolem;
-    // }
-
     public void SelectGolem(int golem)
     {
         selectedGolem = golem;
@@ -116,11 +100,14 @@ public class GameController : MonoBehaviour
     [ContextMenu("TakeDamage")]
     public void EnemyReachTop()
     {
+        var h = health >= 0 ? health - 1 : 0;
+        healthObject[h].SetActive(false);
+
         health--;
-        uiController.TakeDamage(health);
+        //uiController.TakeDamage(health);
         mat.color = damageColor;
         mat.DOColor(originalColor, 1.25f);
-        top.transform.DOPunchScale(Vector3.one * 1.5f, 1.25f);
+        //top.transform.DOPunchScale(Vector3.one * 1.5f, 1.25f);
         //top.transform.DOPunchRotation(Vector3.up * 360, 1.25f);
     }
 }

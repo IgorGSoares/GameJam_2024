@@ -13,7 +13,7 @@ public class UIController : MonoBehaviour
 
     public bool canPause = true;
 
-    [SerializeField] Image[] healthPoints;
+    //[SerializeField] Image[] healthPoints;
     [SerializeField] GameObject gameOverPanel;
 
     private void Start()
@@ -57,10 +57,10 @@ public class UIController : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int count)
-    {
-        healthPoints[count].gameObject.SetActive(false);
-    }
+    // public void TakeDamage(int count)
+    // {
+    //     healthPoints[count].gameObject.SetActive(false);
+    // }
 
     public void RestartGame()
     {
