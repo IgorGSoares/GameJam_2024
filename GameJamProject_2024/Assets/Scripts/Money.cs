@@ -13,6 +13,7 @@ public class Money : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("instantiated money");
         StartCoroutine(Disapear());
     }
 

@@ -9,6 +9,7 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] GameObject[] enemies;
 
+    [SerializeField] float timerToStartSpawning = 7.5f;
     [SerializeField] float timerToSpawn = 10f; //10f
     [SerializeField] int maxEnemies = 15;
     private float spawnVariation = 4f;
@@ -31,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
     IEnumerator SpawnEnemies()
     {
         //Debug.Log("call enemy spawner");
-        yield return new WaitForSeconds(0.5f); //7.5
+        yield return new WaitForSeconds(timerToStartSpawning); //7.5
         canSpawn = true;
 
         //Debug.Log("spawncount: " + spawnCount);

@@ -8,13 +8,13 @@ public class Billboard : MonoBehaviour
 
     void Start()
     {
-        // Acessa a câmera principal da cena
+        // Acessa a cï¿½mera principal da cena
         mainCamera = Camera.main;
     }
 
     void Update()
     {
-        // Faz com que a sprite esteja sempre olhando para a câmera
-        transform.forward = mainCamera.transform.forward;
+        // Faz com que a sprite esteja sempre olhando para a cï¿½mera
+        transform.forward = Camera.main.transform.forward;
     }
 }

@@ -5,5 +5,5 @@ using UnityEngine.Events;
 
 public static class GameEvents
 {
-    static public UnityEvent<int> OnEntityKilled = new UnityEvent<int>();
+    static public UnityEvent<int> OnEntityKilled = new UnityEvent<int>(); //COMMENT: when someone is killed, i think so
 }
